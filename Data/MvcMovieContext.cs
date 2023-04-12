@@ -15,5 +15,19 @@ namespace MvcMovie.Data
         }
 
         public DbSet<MvcMovie.Models.Movie> Movie { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Movie> BetSlips { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Movie> Leagues { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Movie> SiteProps { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Movie> Sports { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Movie> Sports_History { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Movie> SportsBooks { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Movie> SportsStats { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Movie> Teams { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Movie> Wager_History { get; set; } = default!;
+
+
+
+
+
     }
 }

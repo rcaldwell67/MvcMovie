@@ -21,7 +21,7 @@
     </p>
 </form>
 
-<table class="table">
+<table id="myTable" class="table">
     <thead>
         <tr>
             <th>
@@ -70,3 +70,7 @@
         }
     </tbody>
 </table>
+<script>
+    let table = new DataTable('#myTable');
+    $('table').DataTable();
+</script>
