@@ -15,6 +15,7 @@ namespace MvcMovie.Data
         }
 
         public DbSet<MvcMovie.Models.Movie> Movie { get; set; } = default!;
+        public DbSet<MvcMovie.Models.Wager> Wager { get; set; } = default!;
         public DbSet<MvcMovie.Models.Movie> BetSlips { get; set; } = default!;
         public DbSet<MvcMovie.Models.Movie> Leagues { get; set; } = default!;
         public DbSet<MvcMovie.Models.Movie> SiteProps { get; set; } = default!;
@@ -24,10 +25,6 @@ namespace MvcMovie.Data
         public DbSet<MvcMovie.Models.Movie> SportsStats { get; set; } = default!;
         public DbSet<MvcMovie.Models.Movie> Teams { get; set; } = default!;
         public DbSet<MvcMovie.Models.Movie> Wager_History { get; set; } = default!;
-
-
-
-
 
     }
 }

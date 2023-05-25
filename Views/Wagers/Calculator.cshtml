@@ -1,0 +1,413 @@
+﻿@{
+    ViewData["Title"] = "Calculator";
+}
+
+<h4>Calculate Wagers</h4>
+<div class="divTable">
+    <div class="divTable">
+        <div class="divTableRow">
+            <div class="divTableCell" style="width:25%">
+                <div class="divTableHeading">
+                    FA 4 Team Parlay
+                </div>
+            </div>
+            <div class="divTableCell">
+                <div class="divTableHeading">
+                    Payout<input id="TotalPayoutFA" style="width:60px" />
+                </div>
+            </div>
+            <div class="divTableCell">
+                <div class="divTableHeading">
+                    TotalDecOdds<input id="TotalDecOddsFA" style="width:60px" readonly="readonly"/>
+                </div>
+            </div>
+            <div class="divTableCell">
+                <div class="divTableHeading">
+                    Total Win<input id="TotalWinFA" style="width:60px" readonly="readonly" />
+                </div>
+            </div>
+            <div class="divTableCell">
+                <div class="divTableHeading">
+                    Total Bet<input id="TotalBetFA" style="width:60px" readonly="readonly" />
+                </div>
+            </div>
+        </div>
+        <div class="divTableRow">
+            <div class="divTableCell">
+                <div class="divTableHeading">
+                    UD 4 Team Parlay
+                </div>
+            </div>
+            <div class="divTableCell">
+                <div class="divTableHeading">
+                    Payout<input id="TotalPayoutUD" style="width:60px" />
+                </div>
+            </div>
+            <div class="divTableCell">
+                <div class="divTableHeading">
+                    TotalDecOdds<input id="TotalDecOddsUD" style="width:60px" readonly="readonly" />
+                </div>
+            </div>
+            <div class="divTableCell">
+                <div class="divTableHeading">
+                    Total Win<input id="TotalWinUD" style="width:60px" readonly="readonly" />
+                </div>
+            </div>
+            <div class="divTableCell">
+                <div class="divTableHeading">
+                    Total Bet<input id="TotalBetUD" style="width:60px" readonly="readonly" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+<form id="oddsForm">
+<div class="divTable">
+    <div class="divTableRow">
+        <div class="divTableCell" style="width:20%">
+            <div class="divTable" style="width:20%">
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div class="divTableHeading">
+                            Leg 1
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div id="Odds1" class="divTableCell">
+                        <div class="divTableHeading">
+                            Odds 1
+                        </div>
+                        <div>
+                            <label><b>FA</b></label><input id="Odds1FA" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>UD</b></label><input id="Odds1UD" style="width:60px" />
+                        </div>
+                    <div id="DecOdds1" class="divTableCell">
+                        <div class="divTableHeading">
+                                DecOdds 1
+                        </div>
+                            <div>
+                                <label><b>FA</b></label><input id="DecOdds1FA" readonly="readonly" style="width:60px" />
+                            </div>
+                            <div>
+                                <label><b>UD</b></label><input id="DecOdds1UD" readonly="readonly" style="width:60px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow" style="display:none">
+                    <div id="Amounts1FA" class="divTableCell">
+                        <div class="divTableHeading">
+                            FA Amounts 1
+                        </div>
+                        <div>
+                            <label><b>Payout</b></label><input id="Payout1FA" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Bet</b></label><input id="Bet1FA" readonly="readonly" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Win</b></label><input id="Win1FA" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div id="Amounts1UD" class="divTableCell">
+                        <div class="divTableHeading">
+                            UD Amounts 1
+                        </div>
+                        <div>
+                            <label><b>Payout</b></label><input id="Payout1UD" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Bet</b></label><input id="Bet1UD" readonly="readonly" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Win</b></label><input id="Win1UD" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divTableCell" style="width:20%">
+            <div class="divTable" style="width:20%">
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div class="divTableHeading">
+                            Leg 2
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div id="Odds2" class="divTableCell">
+                        <div class="divTableHeading">
+                            Odds 2
+                        </div>
+                        <div>
+                            <label><b>FA</b></label><input id="Odds2FA" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>UD</b></label><input id="Odds2UD" style="width:60px" />
+                        </div>
+                        <div id="DecOdds2" class="divTableCell">
+                            <div class="divTableHeading">
+                                DecOdds 2
+                            </div>
+                            <div>
+                                <label><b>FA</b></label><input id="DecOdds2FA" readonly="readonly" style="width:60px" />
+                            </div>
+                            <div>
+                                <label><b>UD</b></label><input id="DecOdds2UD" readonly="readonly" style="width:60px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow" style="display:none">
+                    <div id="Amounts2FA" class="divTableCell">
+                        <div class="divTableHeading">
+                            FA Amounts 2
+                        </div>
+                        <div>
+                            <label><b>Payout</b></label><input id="Payout2FA" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Bet</b></label><input id="Bet2FA" readonly="readonly" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Win</b></label><input id="Win2FA" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div id="Amounts2UD" class="divTableCell">
+                        <div class="divTableHeading">
+                            UD Amounts 2
+                        </div>
+                        <div>
+                            <label><b>Payout</b></label><input id="Payout2UD" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Bet</b></label><input id="Bet2UD" readonly="readonly" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Win</b></label><input id="Win2UD" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divTableCell" style="width:20%">
+            <div class="divTable" style="width:20%">
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div class="divTableHeading">
+                            Leg 3
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div id="Odds3" class="divTableCell">
+                        <div class="divTableHeading">
+                            Odds 3
+                        </div>
+                        <div>
+                            <label><b>FA</b></label><input id="Odds3FA" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>UD</b></label><input id="Odds3UD" style="width:60px" />
+                        </div>
+                        <div id="DecOdds3" class="divTableCell">
+                            <div class="divTableHeading">
+                                DecOdds 3
+                            </div>
+                            <div>
+                                <label><b>FA</b></label><input id="DecOdds3FA" readonly="readonly" style="width:60px" />
+                            </div>
+                            <div>
+                                <label><b>UD</b></label><input id="DecOdds3UD" readonly="readonly" style="width:60px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow" style="display:none">
+                    <div id="Amounts3FA" class="divTableCell">
+                        <div class="divTableHeading">
+                            FA Amounts 3
+                        </div>
+                        <div>
+                            <label><b>Payout</b></label><input id="Payout3FA" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Bet</b></label><input id="Bet3FA" readonly="readonly" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Win</b></label><input id="Win3FA" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div id="Amounts3UD" class="divTableCell">
+                        <div class="divTableHeading">
+                            UD Amounts 3
+                        </div>
+                        <div>
+                            <label><b>Payout</b></label><input id="Payout3UD" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Bet</b></label><input id="Bet3UD" readonly="readonly" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Win</b></label><input id="Win3UD" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divTableCell" style="width:20%">
+            <div class="divTable" style="width:20%">
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div class="divTableHeading">
+                            Leg 4
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div id="Odds4" class="divTableCell">
+                        <div class="divTableHeading">
+                            Odds 4
+                        </div>
+                        <div>
+                            <label><b>FA</b></label><input id="Odds4FA" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>UD</b></label><input id="Odds4UD" style="width:60px" />
+                        </div>
+                        <div id="DecOdds4" class="divTableCell">
+                            <div class="divTableHeading">
+                                DecOdds 4
+                            </div>
+                            <div>
+                                <label><b>FA</b></label><input id="DecOdds4FA" readonly="readonly" style="width:60px" />
+                            </div>
+                            <div>
+                                <label><b>UD</b></label><input id="DecOdds4UD" readonly="readonly" style="width:60px" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow" style="display:none">
+                    <div id="Amounts4FA" class="divTableCell">
+                        <div class="divTableHeading">
+                            FA Amounts 4
+                        </div>
+                        <div>
+                            <label><b>Payout</b></label><input id="Payout4FA" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Bet</b></label><input id="Bet4FA" readonly="readonly" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Win</b></label><input id="Win4FA" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div id="Amounts4UD" class="divTableCell">
+                        <div class="divTableHeading">
+                            UD Amounts 4
+                        </div>
+                        <div>
+                            <label><b>Payout</b></label><input id="Payout4UD" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Bet</b></label><input id="Bet4UD" readonly="readonly" style="width:60px" />
+                        </div>
+                        <div>
+                            <label><b>Win</b></label><input id="Win4UD" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divTableCell" style="width:20%">
+            <div class="divTable" style="width:20%">
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div>
+                            <label><b>Total Cost</b></label><input id="TotalCost" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div class="divTableHeading">
+                            Total Profit
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div>
+                             <label><b>FA 4 Team</b></label><input id="ProfitFA" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div>
+                            <label><b>UD 4 Team</b></label><input id="ProfitUD" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div>
+                            <label><b>UD Leg 1</b></label><input id="ProfitUD1" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div>
+                            <label><b>UD Leg 2</b></label><input id="ProfitUD2" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div>
+                            <label><b>UD Leg 3</b></label><input id="ProfitUD3" readonly="readonly" style="width:60px" />
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableRow">
+                    <div class="divTableCell">
+                        <div>
+                            <label><b>UD Leg 4</b></label><input id="ProfitUD4" readonly="readonly" style="width:60px;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<div class="divTableRow">
+    <div class="divTableCell col-md-1">
+        <div class="form-group">
+            <input type="submit" value="Calculate" class="btn btn-primary" onclick="javascript:calculate()" />
+        </div>
+    </div>
+</div>
+<div class="divTableRow">
+    <div class="divTableCell col-md-1">
+        <div class="form-group">
+            <input type="submit" value="Load Values" class="btn btn-primary" onclick="javascript:loadTestValues()" />
+        </div>
+    </div>
+</div>

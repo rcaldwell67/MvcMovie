@@ -1,0 +1,97 @@
+﻿@model MvcMovie.Models.WagerViewModel
+
+@{
+    ViewData["Title"] = "Wager Stats";
+}
+@*<div class="text-center" style="margin-top:5px;">*@
+<div>
+    <h6>Current Wager(s)</h6>
+    <div class="divTable">
+        <div class="divTableRow">
+        @foreach (var item in Model.Wagers!)
+        {
+            if (item.Winner  == null)
+            {
+                if (item.Type == "1") item.Type = "4 Team Parlay";
+                if (item.Type == "2") item.Type = "Single Bet";
+                if (item.Side == "1") item.Side = "FA";
+                if (item.Side == "2") item.Side = "UD";
+                if (item.Leg1 == null) item.Leg1 = "0";
+                if (item.Leg2 == null) item.Leg2 = "0";
+                if (item.Leg3 == null) item.Leg3 = "0";
+                if (item.Leg4 == null) item.Leg4 = "0";
+                if (item.Leg == null) item.Leg = "0";
+                <div class="divTableCell col-md">
+                        <div class="divTableHeading">
+                            <label class="control-label divTableHeading">
+                                @Html.DisplayNameFor(model => model.Wagers![0].GameDate)
+                            </label>
+                        </div>
+                        <div class="divTableCell">
+                            <span>
+                                @Html.DisplayFor(modelItem => item.GameDate)
+                            </span>
+                        </div>
+                </div>
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">
+                        <label class="control-label divTableHeading">
+                            @Html.DisplayNameFor(model => model.Wagers![0].GameTime)
+                        </label>
+                    </div>
+                    <div class="divTableCell">
+                        <span>
+                            @Html.DisplayFor(modelItem => item.GameTime)
+                        </span>
+                    </div>
+                </div>
+                <div class ="divTableCell col-md">
+                    <div class="divTableHeading">Type</div>
+                    item.Type
+                </div>
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">Side</div>
+                        item.Side
+                </div>
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">Leg1</div>
+                    item.Leg1
+                </div>
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">Leg2</div>
+                    item.Leg2
+                </div>
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">Leg3</div>
+                    item.Leg3
+                </div>
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">Leg4</div>
+                    item.Leg4
+                </div>
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">Leg</div>
+                    item.Leg
+                </div>  
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">Odds</div>
+                    item.Odds
+                </div>
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">Bet</div>
+                    item.Bet
+                </div>
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">Win</div>
+                    item.Win
+                </div>
+                <div class="divTableCell col-md">
+                    <div class="divTableHeading">Payout</div>
+                    item.Payout
+                </div>
+            }
+        }
+        </div>
+    </div>
+</div>
+

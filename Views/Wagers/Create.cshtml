@@ -1,0 +1,308 @@
+@model MvcMovie.Models.Wager
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Wager</h4>
+<hr />
+<form asp-action="Create">
+<div class="divTable container-fluid">
+<div class="divTableRow" style="outline:solid;outline-width:thin">
+@*    <div class="divTableCell col-md">
+        <div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GameDate" class="control-label divTableHeading"></label>
+                <input asp-for="GameDate" class="form-control" />
+                <span asp-validation-for="GameDate" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="divTableCell col-md">
+        <div>
+            <div class="form-group">
+                <label asp-for="GameTime" class="control-label divTableHeading"></label>
+                <input asp-for="GameTime" class="form-control" />
+                <span asp-validation-for="GameTime" class="text-danger"></span>
+            </div>
+        </div>
+    </div>*@
+    <div class="divTableCell col-md-1">
+            <div class="form-group">
+                <label asp-for="Type" class="control-label divTableHeading"></label>
+                <input asp-for="Type" class="form-control"/>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+    </div>
+    <div class="divTableCell col-md-1">
+            <div class="form-group">
+                <label asp-for="Side" class="control-label divTableHeading"></label>
+                <input asp-for="Side" class="form-control" />
+                <span asp-validation-for="Side" class="text-danger"></span>
+            </div>
+    </div>
+    <div class="divTableCell col-md-1">
+        <div class="form-group">
+            <label asp-for="DecOdds" class="control-label divTableHeading"></label>
+            <input asp-for="DecOdds" class="form-control" readonly="readonly" />
+            <span asp-validation-for="DecOdds" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="divTableCell col-md-1">
+            <div class="form-group">
+                <label asp-for="Payout" class="control-label divTableHeading"></label>
+                <input asp-for="Payout" class="form-control" />
+                <span asp-validation-for="Payout" class="text-danger"></span>
+            </div>
+    </div>
+    <div class="divTableCell col-md-1">
+            <div class="form-group">
+                <label asp-for="Bet" class="control-label divTableHeading"></label>
+                <input asp-for="Bet" class="form-control" readonly="readonly"/>
+                <span asp-validation-for="Bet" class="text-danger"></span>
+            </div>
+     </div>
+    <div class="divTableCell col-md-1">
+            <div class="form-group">
+                <label asp-for="Win" class="control-label divTableHeading"></label>
+                <input asp-for="Win" class="form-control" readonly="readonly" />
+                <span asp-validation-for="Win" class="text-danger"></span>
+            </div>
+    </div>
+</div>
+<div id="divSingle" class="divTableRow">
+    <div class="divTableCell col-md">
+    <div class="form-group">
+        <label asp-for="GameDate" class="control-label divTableHeading"></label>
+        <input asp-for="GameDate" class="form-control" />
+        <span asp-validation-for="GameDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GameTime" class="control-label divTableHeading"></label>
+        <input asp-for="GameTime" class="form-control" />
+        <span asp-validation-for="GameTime" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Leg" class="control-label divTableHeading"></label>
+        <input asp-for="Leg" class="form-control" readonly="readonly" />
+        <span asp-validation-for="Leg" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Odds" class="control-label divTableHeading"></label>
+        <input asp-for="Odds" class="form-control" />
+        <span asp-validation-for="Odds" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DecOdds" class="control-label divTableHeading"></label>
+        <input asp-for="DecOdds" class="form-control" />
+        <span asp-validation-for="DecOdds" class="text-danger"></span>
+    </div>
+    @*<div class="form-group">
+        <label asp-for="Bet" class="control-label divTableHeading"></label>
+        <input asp-for="Bet" class="form-control" />
+        <span asp-validation-for="Bet" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Win" class="control-label divTableHeading"></label>
+        <input asp-for="Win" class="form-control" />
+        <span asp-validation-for="Win" class="text-danger"></span>
+    </div>
+@*    <div class="form-group">
+        <label asp-for="Payout" class="control-label divTableHeading"></label>
+        <input asp-for="Payout" class="form-control" />
+        <span asp-validation-for="Payout" class="text-danger"></span>
+    </div>*@
+</div>
+</div>
+
+<div id="divParlay" class="divTableRow">
+    <div id="4Team1" class="divTableCell col-md">
+        <div class="form-group">
+            <label asp-for="Leg1" class="control-label divTableHeading"></label>
+            <input asp-for="Leg1" class="form-control" value="1" readonly="readonly" />
+            <span asp-validation-for="Leg1" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="GameDate1" class="control-label divTableHeading"></label>
+            <input asp-for="GameDate1" class="form-control" />
+            <span asp-validation-for="GameDate1" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="GameTime1" class="control-label divTableHeading"></label>
+            <input asp-for="GameTime1" class="form-control" />
+            <span asp-validation-for="GameTime1" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="Odds1" class="control-label divTableHeading"></label>
+                    <input asp-for="Odds1" class="form-control" />
+                    <span asp-validation-for="Odds1" class="text-danger"></span>
+        </div>
+@*        <div class="form-group">
+            <label asp-for="Payout" class="control-label divTableHeading"></label>
+            <input asp-for="Payout" class="form-control" />
+            <span asp-validation-for="Payout" class="text-danger"></span>
+        </div>*@
+        <div class="form-group">
+                    <label asp-for="DecOdds1" class="control-label divTableHeading"></label>
+                    <input asp-for="DecOdds1" class="form-control" />
+                    <span asp-validation-for="DecOdds1" class="text-danger"></span>
+        </div>
+@*        <div class="form-group">
+            <label asp-for="Bet" class="control-label divTableHeading"></label>
+            <input asp-for="Bet" class="form-control" />
+            <span asp-validation-for="Bet" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Win" class="control-label divTableHeading"></label>
+            <input asp-for="Win" class="form-control" />
+            <span asp-validation-for="Win" class="text-danger"></span>
+        </div>*@
+    </div>
+    <div id="4Team2" class="divTableCell col-md">
+        <div class="form-group">
+            <label asp-for="Leg2" class="control-label divTableHeading"></label>
+            <input asp-for="Leg2" class="form-control" value="2" readonly="readonly" />
+            <span asp-validation-for="Leg2" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="GameDate2" class="control-label divTableHeading"></label>
+                    <input asp-for="GameDate2" class="form-control" />
+                    <span asp-validation-for="GameDate2" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="GameTime2" class="control-label divTableHeading"></label>
+                    <input asp-for="GameTime2" class="form-control" />
+                    <span asp-validation-for="GameTime2" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="Odds2" class="control-label divTableHeading"></label>
+                    <input asp-for="Odds2" class="form-control" />
+                    <span asp-validation-for="Odds2" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="DecOdds2" class="control-label divTableHeading"></label>
+                    <input asp-for="DecOdds2" class="form-control" />
+                    <span asp-validation-for="DecOdds2" class="text-danger"></span>
+        </div>
+@*        <div class="form-group">
+            <label asp-for="Bet" class="control-label divTableHeading"></label>
+            <input asp-for="Bet" class="form-control" />
+            <span asp-validation-for="Bet" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Win" class="control-label divTableHeading"></label>
+            <input asp-for="Win" class="form-control" />
+            <span asp-validation-for="Win" class="text-danger"></span>
+        </div>*@
+@*        <div class="form-group">
+            <label asp-for="Payout" class="control-label divTableHeading"></label>
+            <input asp-for="Payout" class="form-control" />
+            <span asp-validation-for="Payout" class="text-danger"></span>
+        </div>*@
+    </div>
+    <div id="4Team3" class="divTableCell col-md">
+        <div class="form-group">
+            <label asp-for="Leg3" class="control-label divTableHeading"></label>
+            <input asp-for="Leg3" class="form-control" value="3" readonly="readonly" />
+            <span asp-validation-for="Leg3" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="GameDate3" class="control-label divTableHeading"></label>
+                    <input asp-for="GameDate3" class="form-control" />
+                    <span asp-validation-for="GameDate3" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="GameTime3" class="control-label divTableHeading"></label>
+                    <input asp-for="GameTime3" class="form-control" />
+                    <span asp-validation-for="GameTime3" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="Odds3" class="control-label divTableHeading"></label>
+                    <input asp-for="Odds3" class="form-control" />
+                    <span asp-validation-for="Odds3" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="DecOdds3" class="control-label divTableHeading"></label>
+                    <input asp-for="DecOdds3" class="form-control" />
+                    <span asp-validation-for="DecOdds3" class="text-danger"></span>
+        </div>
+@*        <div class="form-group">
+            <label asp-for="Bet" class="control-label divTableHeading"></label>
+            <input asp-for="Bet" class="form-control" />
+            <span asp-validation-for="Bet" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Win" class="control-label divTableHeading"></label>
+            <input asp-for="Win" class="form-control" />
+            <span asp-validation-for="Win" class="text-danger"></span>
+        </div>*@
+@*        <div class="form-group">
+            <label asp-for="Payout" class="control-label divTableHeading"></label>
+            <input asp-for="Payout" class="form-control" />
+            <span asp-validation-for="Payout" class="text-danger"></span>
+        </div>*@
+    </div>
+    <div id="4Team4" class="divTableCell col-md">
+        <div class="form-group">
+            <label asp-for="Leg4" class="control-label divTableHeading"></label>
+            <input asp-for="Leg4" class="form-control" value="4" readonly="readonly" />
+            <span asp-validation-for="Leg4" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="GameDate4" class="control-label divTableHeading"></label>
+                    <input asp-for="GameDate4" class="form-control" />
+                    <span asp-validation-for="GameDate4" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="GameTime4" class="control-label divTableHeading"></label>
+                    <input asp-for="GameTime4" class="form-control" />
+                    <span asp-validation-for="GameTime4" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="Odds4" class="control-label divTableHeading"></label>
+                    <input asp-for="Odds4" class="form-control" />
+                    <span asp-validation-for="Odds4" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                    <label asp-for="DecOdds4" class="control-label divTableHeading"></label>
+                    <input asp-for="DecOdds4" class="form-control" />
+                    <span asp-validation-for="DecOdds4" class="text-danger"></span>
+        </div>
+@*        <div class="form-group">
+            <label asp-for="Bet" class="control-label divTableHeading"></label>
+            <input asp-for="Bet" class="form-control" />
+            <span asp-validation-for="Bet" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Win" class="control-label divTableHeading"></label>
+            <input asp-for="Win" class="form-control" />
+            <span asp-validation-for="Win" class="text-danger"></span>
+        </div>*@
+@*        <div class="form-group">
+            <label asp-for="Payout" class="control-label divTableHeading"></label>
+            <input asp-for="Payout" class="form-control" />
+            <span asp-validation-for="Payout" class="text-danger"></span>
+        </div>*@
+    </div>
+</div>
+<div class="divTableRow">
+    <div class="divTableCell col-md-4">
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+
+</div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
